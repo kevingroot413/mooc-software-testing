@@ -31,7 +31,11 @@ public class RomanConvert {
                 nextNumber = map.get(romanNumber.charAt(i+1));
             }
 
-            if(currentNumber<nextNumber) {
+            if (currentNumber<nextNumber && (currentNumber==5 || currentNumber==50 || currentNumber==500)) {
+                convertedNumber = -1;
+                break;
+            }
+            else if(currentNumber<nextNumber) {
                 convertedNumber -= currentNumber;
             }
             else {
